@@ -1,49 +1,38 @@
 # kuso-code
 
+ECCコンピュータ専門学校地球祭2021で開催されたクソコードグランプリ準優勝コード
+
 FizzBuzzをいかにクソにかけるかを確かめる
 
-環境 : Java SE15
+環境 : PHP7.4、Docker、MySQL8
 
-_____________________________________
+# コードの説明やアピールポイントなど
+https://hackmd.io/7VFzc9p7Qpyr5B9bsogjMw?view
 
-コンテナ作成
+# 構築
 
-```
-$ docker-compose build
-```
-
-コンテナとイメージ破棄
-
-```
-$ docker-compose down --rmi all --volumes --remove-orphans
-```
-
-コンテナ起動
-
+コンテナ立ち上げ
 ```
 $ docker-compose up -d
 ```
-
-コンテナに入る
-
+テーブル作成
 ```
-$ docker-compose exec java bash
-```
+$ docker-compose exec db bash
 
-コンパイル(例としてMain.javaをコンパイルする)
+bash# mysql -u root -p test
+```
+mysqlにログインしたら ` initdatabase ` 内の ` create_table.sql ` を実行する
 
+FizzBuzzデータを挿入する
 ```
-bash# javac Main.java
-```
+$ docker-compose run php bash
 
-実行(例としてMain.javaを実行する)
+bash# php initdatabase/insert_fizzbuzz.php
+```
+FizzBuzz実行
+```
+bash# cd PHPCODE
 
-```
-bash# java Main
-```
+bash# php create_fizzbuzzcsv.php
 
-windows環境ではdockerコマンドの前に「winpty」が必要かも
-
-```
-$ winpty docker-compose exec java bash
-```
+bash# php FizzBuzz.php
