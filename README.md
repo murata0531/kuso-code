@@ -35,4 +35,10 @@ bash# cd PHPCODE
 
 bash# php create_fizzbuzzcsv.php
 
-bash# php FizzBuzz.php
+bash# php Use_FizzBuzz.php
+```
+FizzBuzzをテストする
+```
+bash# cd test
+
+bash# phpunit FizzBuzzTest.php --colors
