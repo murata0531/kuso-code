@@ -6,7 +6,7 @@ class FizzBuzzTest extends TestCase {
 
     protected $object;
 
-    public function setUp(): void { 
+    public function setUp(): void {
         // テストするオブジェクトを生成する
         $this->object = new FizzBuzz();
     }
