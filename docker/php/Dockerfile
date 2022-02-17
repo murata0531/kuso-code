@@ -16,6 +16,7 @@ COPY ./php.ini /usr/local/etc/php/php.ini
 
 WORKDIR /workspace
 
+RUN apt-get update
 RUN apt-get install wget
 
 RUN wget https://phar.phpunit.de/phpunit.phar
